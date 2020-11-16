@@ -13,6 +13,8 @@
 		9E94901325618E91001CCD16 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E94901225618E91001CCD16 /* Preview Assets.xcassets */; };
 		9E94901D25619035001CCD16 /* Trapezium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E94901C25619035001CCD16 /* Trapezium.swift */; };
 		9E9490232561AECE001CCD16 /* Trapezium1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9490222561AECE001CCD16 /* Trapezium1.swift */; };
+		9E949026256281C9001CCD16 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E949025256281C9001CCD16 /* Rectangle.swift */; };
+		9E94902925628B5A001CCD16 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E94902825628B5A001CCD16 /* Wave.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		9E94901425618E91001CCD16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E94901C25619035001CCD16 /* Trapezium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trapezium.swift; sourceTree = "<group>"; };
 		9E9490222561AECE001CCD16 /* Trapezium1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trapezium1.swift; sourceTree = "<group>"; };
+		9E949025256281C9001CCD16 /* Rectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
+		9E94902825628B5A001CCD16 /* Wave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 			children = (
 				9E94901C25619035001CCD16 /* Trapezium.swift */,
 				9E9490222561AECE001CCD16 /* Trapezium1.swift */,
+				9E949025256281C9001CCD16 /* Rectangle.swift */,
+				9E94902825628B5A001CCD16 /* Wave.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -152,6 +158,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E94902925628B5A001CCD16 /* Wave.swift in Sources */,
+				9E949026256281C9001CCD16 /* Rectangle.swift in Sources */,
 				9E94900E25618E8C001CCD16 /* ContentView.swift in Sources */,
 				9E9490232561AECE001CCD16 /* Trapezium1.swift in Sources */,
 				9E94901D25619035001CCD16 /* Trapezium.swift in Sources */,
