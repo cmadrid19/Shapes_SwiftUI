@@ -26,7 +26,8 @@ struct Home: View {
     @State private var offset: CGFloat = 0.65
     @State private var change = false
     
-    
+    //Triangle
+    @State private var degress: Double = 0.0
     
     
     var body: some View{
@@ -114,7 +115,7 @@ struct Home: View {
                     .clipShape(
                         Rectangle(yOffset: change ? 40 : -40)
                     )
-                    
+                
                 Button(action: {
                     withAnimation(.linear){
                         self.change.toggle()
@@ -161,7 +162,7 @@ struct Home: View {
                                 .fontWeight(.bold)
                                 .shadow(radius: 1)
                         )
-                        
+                    
                 }
                 
                 Button(action: {
@@ -176,6 +177,114 @@ struct Home: View {
                 })
                 
                 Spacer(minLength: 40)
+            }
+            
+            
+            Spacer()
+            
+            
+            //Triangle
+            VStack{
+                Triangle()
+                    .fill(Color.red)
+                    .frame(height: 200)
+                    .padding(5)
+                    .shadow(radius: 8)
+                    //flip
+                    .scaleEffect(y: -1)
+                    .overlay(
+                        Text("Filled triangle")
+                            .font(.title2)
+                            .fontWeight(.heavy)
+                    )
+                
+                
+            }
+            
+            Spacer(minLength: 500)
+            
+            
+            VStack{
+                
+                ZStack{
+                    TrianglesCornerView()
+                        .scaleEffect(x: -1, y: -1)
+                    
+                    TrianglesCornerView()
+                        .scaleEffect(x: -1, y: 1)
+                    
+                    TrianglesCornerView()
+                        .scaleEffect(x: 1, y: -1)
+                    
+                    TrianglesCornerView()
+                        .scaleEffect(x: 1, y: 1)
+                }
+                
+            }
+            .frame(maxHeight: .infinity, alignment: .bottom)
+            
+            GeometryReader { geo in
+                VStack{
+                    ZStack{
+                        ForEach(1 ..< 11) { index in
+                            Triangle()
+                                .fill(Color.red)
+                                .opacity(0.4)
+                                .frame(width: 150, height: 150)
+                                .rotationEffect(.degrees(Double(index) * degress), anchor: .center)
+                        }
+                    }
+                    .offset(x: change ? 200 : 0, y:change ? -50 : 0)
+                    
+                    
+                }
+                .onAppear(){
+                    withAnimation(
+                        Animation.easeOut(duration: 2).repeatForever(autoreverses: true)
+                    ){
+                        degress += 36
+                    }
+                }
+                
+                Spacer(minLength:  150)
+            }
+            
+            
+           
+        }
+       
+    }
+}
+
+struct TrianglesCornerView: View {
+    var body: some View{
+        GeometryReader{ geoReader in
+            ZStack(alignment: .bottomLeading){
+                Triangle()
+                    .fill(Color.purple)
+                    .opacity(0.2)
+                    .frame(height: 50)
+                
+                Triangle()
+                    .fill(Color.purple)
+                    .opacity(0.2)
+                    .frame(width: geoReader.size.width - 50, height: 100)
+                
+                Triangle()
+                    .fill(Color.purple)
+                    .opacity(0.2)
+                    .frame(width: geoReader.size.width - 100, height: 150)
+                
+                Triangle()
+                    .fill(Color.purple)
+                    .opacity(0.2)
+                    .frame(width: geoReader.size.width - 150, height: 200)
+                
+                Triangle()
+                    .fill(Color.purple)
+                    .opacity(0.2)
+                    .frame(width: geoReader.size.width - 200, height: 250)
+                
             }
         }
     }
